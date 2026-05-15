@@ -118,6 +118,18 @@ img {
   background: #f3f3f3;
 }
 
+.nav-event {
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+
+.nav-event:hover {
+  background: var(--accent);
+  color: #fff;
+  filter: brightness(0.96);
+}
+
 .nav-cta {
   border: 1px solid var(--accent);
   color: var(--accent);
