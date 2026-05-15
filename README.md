@@ -1,16 +1,35 @@
-## Hi there 👋
+# REDLEV website
 
-<!--
-**redlev/redlev** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Sitio oficial publicado con GitHub Pages desde `redlev/redlev.github.io`.
 
-Here are some ideas to get you started:
+## Cómo editar contenido mensual
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+La mayoría del contenido editable está en `data/content.json`.
+
+1. En GitHub, abre `data/content.json`.
+2. Presiona el icono de edición.
+3. Cambia solo los textos, fechas, enlaces o rutas de imagen.
+4. Guarda el cambio con `Commit changes`.
+
+## Secciones más frecuentes
+
+- `activities.upcoming`: próximas actividades. Mantén hasta dos actividades visibles.
+- `activities.upcoming[1]`: seminario mensual editable.
+- `activities.recent`: actividades pasadas.
+- `featured_research`: artículo destacado del mes.
+- `committee`: integrantes del comité.
+- `links`: formularios y redes sociales.
+
+## Imágenes
+
+Sube imágenes a `assets/img/` y escribe la ruta en `data/content.json`.
+
+Ejemplo:
+
+```json
+"image": "assets/img/nombre-de-imagen.jpg"
+```
+
+## Página secundaria del simposio
+
+La actividad destacada enlaza a `simposio-2026.html`. Esa página queda preparada para completar luego programa, inscripciones, comité organizador y otros detalles del evento.
