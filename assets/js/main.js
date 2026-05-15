@@ -10,6 +10,7 @@
 
 (function () {
   const contentUrl = new URL("data/content.json", window.location.href);
+  contentUrl.searchParams.set("v", Date.now().toString());
   const $ = (id) => document.getElementById(id);
 
   const actions = {
@@ -121,7 +122,6 @@
 
   function renderActivities(activities = {}) {
     renderUpcomingActivities(activities.upcoming || []);
-    renderRecentActivities(activities.recent || []);
   }
 
   function renderUpcomingActivities(items) {
@@ -131,15 +131,24 @@
     wrap.replaceChildren();
 
     items.slice(0, 2).forEach((item) => {
+      const hasImage = Boolean(item.image);
       const article = document.createElement("article");
-      article.className = item.featured ? "card activity-card activity-card-featured" : "card activity-card";
+      article.className = [
+        "card",
+        "activity-card",
+        hasImage ? "activity-card-with-media" : "activity-card-text",
+        item.featured ? "activity-card-featured" : ""
+      ].filter(Boolean).join(" ");
 
-      const media = document.createElement("figure");
-      media.className = "activity-media";
-      const img = document.createElement("img");
-      img.src = item.image || "assets/img/placeholder-banner.jpg";
-      img.alt = item.image_alt || item.title || "Imagen de actividad REDLEV";
-      media.appendChild(img);
+      if (hasImage) {
+        const media = document.createElement("figure");
+        media.className = "activity-media";
+        const img = document.createElement("img");
+        img.src = item.image;
+        img.alt = item.image_alt || item.title || "Imagen de actividad REDLEV";
+        media.appendChild(img);
+        article.appendChild(media);
+      }
 
       const body = document.createElement("div");
       body.className = "activity-body";
@@ -165,41 +174,8 @@
         body.appendChild(actionsWrap);
       }
 
-      article.append(media, body);
+      article.appendChild(body);
       wrap.appendChild(article);
-    });
-  }
-
-  function renderRecentActivities(items) {
-    const wrap = $("recentActivities");
-    if (!wrap) return;
-
-    wrap.replaceChildren();
-
-    items.forEach((item) => {
-      const card = document.createElement("article");
-      card.className = "card";
-
-      card.append(
-        textElement("h3", item.title || "Seminario REDLEV", "h3"),
-        textElement("p", item.subtitle || "", "text"),
-        textElement("p", item.speaker || "", "meta")
-      );
-
-      if (item.cta_url) {
-        const actionsWrap = document.createElement("div");
-        actionsWrap.className = "actions";
-        const link = document.createElement("a");
-        link.className = "button button-secondary";
-        link.href = item.cta_url;
-        link.target = "_blank";
-        link.rel = "noreferrer";
-        link.textContent = item.cta_label || "Ver";
-        actionsWrap.appendChild(link);
-        card.appendChild(actionsWrap);
-      }
-
-      wrap.appendChild(card);
     });
   }
 

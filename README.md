@@ -14,8 +14,8 @@ La mayoría del contenido editable está en `data/content.json`.
 ## Secciones más frecuentes
 
 - `activities.upcoming`: próximas actividades. Mantén hasta dos actividades visibles.
-- `activities.upcoming[1]`: seminario mensual editable.
-- `activities.recent`: actividades pasadas.
+- `activities.upcoming[0]`: actividad destacada, con imagen y enlace a una página secundaria si corresponde.
+- `activities.upcoming[1]`: seminario mensual editable. Deja `"image": ""` si no quieres mostrar imagen.
 - `featured_research`: artículo destacado del mes.
 - `committee`: integrantes del comité.
 - `links`: formularios y redes sociales.

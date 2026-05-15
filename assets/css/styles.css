@@ -341,11 +341,15 @@ code {
   gap: 14px;
 }
 
-.activity-card {
+.activity-card-with-media {
   display: grid;
   grid-template-columns: minmax(220px, 0.42fr) minmax(0, 1fr);
   gap: 0;
   overflow: hidden;
+  padding: 0;
+}
+
+.activity-card-text {
   padding: 0;
 }
 
@@ -356,9 +360,11 @@ code {
 }
 
 .activity-media {
-  min-height: 230px;
+  min-height: 170px;
+  max-height: 260px;
   margin: 0;
   background: #fff;
+  overflow: hidden;
 }
 
 .activity-media img {
@@ -394,7 +400,11 @@ code {
 
 .research-media {
   align-self: start;
+  justify-self: end;
   margin: 0;
+  width: 100%;
+  max-width: 360px;
+  overflow: hidden;
 }
 
 .research-media img {
@@ -476,8 +486,13 @@ code {
   .hero,
   .event-hero,
   .research-card,
-  .activity-card {
+  .activity-card-with-media {
     grid-template-columns: 1fr;
+  }
+
+  .research-media {
+    justify-self: stretch;
+    max-width: 100%;
   }
 
   .grid {
