@@ -12,6 +12,12 @@
   const contentUrl = new URL("data/content.json", window.location.href);
   contentUrl.searchParams.set("v", Date.now().toString());
   const $ = (id) => document.getElementById(id);
+  const socialIcons = {
+    youtube: '<svg viewBox="0 0 24 24" role="img" focusable="false"><path d="M21.6 7.2a3 3 0 0 0-2.1-2.1C17.6 4.6 12 4.6 12 4.6s-5.6 0-7.5.5a3 3 0 0 0-2.1 2.1A31.3 31.3 0 0 0 2 12a31.3 31.3 0 0 0 .4 4.8 3 3 0 0 0 2.1 2.1c1.9.5 7.5.5 7.5.5s5.6 0 7.5-.5a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 22 12a31.3 31.3 0 0 0-.4-4.8ZM10 15.5v-7l6 3.5-6 3.5Z"/></svg>',
+    x: '<svg viewBox="0 0 24 24" role="img" focusable="false"><path d="M4.4 4h4.7l3.7 5.2L17.3 4h2.2l-5.7 6.6L20 20h-4.7l-4-5.8L6.3 20H4.1l6.2-7.2L4.4 4Zm3.8 1.6 8 12.8h1.6l-8-12.8H8.2Z"/></svg>',
+    facebook: '<svg viewBox="0 0 24 24" role="img" focusable="false"><path d="M14 8.5V7.1c0-.7.5-1.1 1.3-1.1H17V3h-2.6C11.9 3 10 4.7 10 7v1.5H7.8V12H10v9h4v-9h2.7l.5-3.5H14Z"/></svg>',
+    instagram: '<svg viewBox="0 0 24 24" role="img" focusable="false"><path d="M8 3h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm4 3.5a3.5 3.5 0 1 1 0 7 3.5 3.5 0 0 1 0-7Zm0 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Zm4.1-2.8a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/></svg>'
+  };
 
   const actions = {
     text(id, value) {
@@ -38,6 +44,26 @@
       }
       el.src = src;
       if (alt) el.alt = alt;
+      el.hidden = false;
+    },
+    social(id, url, label, network) {
+      const el = $(id);
+      if (!el) return;
+      if (!url) {
+        el.hidden = true;
+        return;
+      }
+
+      const icon = document.createElement("span");
+      icon.className = "social-icon";
+      icon.setAttribute("aria-hidden", "true");
+      icon.innerHTML = socialIcons[network] || "";
+
+      const text = document.createElement("span");
+      text.textContent = label;
+
+      el.href = url;
+      el.replaceChildren(icon, text);
       el.hidden = false;
     }
   };
@@ -104,11 +130,11 @@
     actions.link("contactLink", links.contact_form, "Contacto");
     actions.link("contactLink2", links.contact_form, "Contacto");
     actions.link("privacyLink", links.privacy_policy, "Privacidad");
-    actions.link("youtubeLink", links.youtube, "YouTube");
+    actions.social("youtubeLink", links.youtube, "YouTube", "youtube");
     actions.link("youtubeLink2", links.youtube, "YouTube");
-    actions.link("xLink", links.x, "X");
-    actions.link("facebookLink", links.facebook_group, "Facebook");
-    actions.link("instagramLink", links.instagram, "Instagram");
+    actions.social("xLink", links.x, "X", "x");
+    actions.social("facebookLink", links.facebook_group, "Facebook", "facebook");
+    actions.social("instagramLink", links.instagram, "Instagram", "instagram");
     actions.link("linkedinLink", links.linkedin, "LinkedIn");
   }
 
