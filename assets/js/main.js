@@ -122,6 +122,7 @@
 
   function renderActivities(activities = {}) {
     renderUpcomingActivities(activities.upcoming || []);
+    renderRecentActivities(activities.recent || []);
   }
 
   function renderUpcomingActivities(items) {
@@ -179,6 +180,39 @@
     });
   }
 
+  function renderRecentActivities(items) {
+    const wrap = $("recentActivities");
+    if (!wrap) return;
+
+    wrap.replaceChildren();
+
+    items.forEach((item) => {
+      const card = document.createElement("article");
+      card.className = "card";
+
+      card.append(
+        textElement("h3", item.title || "Seminario REDLEV", "h3"),
+        textElement("p", item.subtitle || "", "text"),
+        textElement("p", item.speaker || "", "meta")
+      );
+
+      if (item.cta_url) {
+        const actionsWrap = document.createElement("div");
+        actionsWrap.className = "actions";
+        const link = document.createElement("a");
+        link.className = "button button-secondary";
+        link.href = item.cta_url;
+        link.target = "_blank";
+        link.rel = "noreferrer";
+        link.textContent = item.cta_label || "Ver";
+        actionsWrap.appendChild(link);
+        card.appendChild(actionsWrap);
+      }
+
+      wrap.appendChild(card);
+    });
+  }
+
   function renderResearch(research = {}) {
     actions.text("researchEyebrow", research.eyebrow || "Este mes destacamos");
     actions.text("researchTitle", research.title);
@@ -195,8 +229,20 @@
     wrap.replaceChildren();
 
     items.forEach((member) => {
+      const hasImage = Boolean(member.image);
       const card = document.createElement("article");
-      card.className = "card";
+      card.className = hasImage ? "card committee-card committee-card-with-photo" : "card committee-card";
+
+      if (hasImage) {
+        const img = document.createElement("img");
+        img.className = "committee-photo";
+        img.src = member.image;
+        img.alt = member.image_alt || member.name || "Fotografía de integrante del comité";
+        card.appendChild(img);
+      }
+
+      const body = document.createElement("div");
+      body.className = "committee-body";
 
       const name = document.createElement("h3");
       name.className = "h3";
@@ -212,7 +258,8 @@
         name.textContent = member.name || "Nombre Apellido";
       }
 
-      card.append(name, textElement("p", member.focus || "", "text"));
+      body.append(name, textElement("p", member.credentials || member.focus || "", "text"));
+      card.appendChild(body);
       wrap.appendChild(card);
     });
   }

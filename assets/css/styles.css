@@ -436,6 +436,29 @@ code {
   text-decoration: underline;
 }
 
+.committee-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.committee-card-with-photo {
+  grid-template-columns: 72px minmax(0, 1fr);
+}
+
+.committee-photo {
+  width: 72px;
+  aspect-ratio: 1;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: #fff;
+  object-fit: cover;
+}
+
+.committee-body {
+  min-width: 0;
+}
+
 .footer {
   margin-top: 24px;
   border-top: 1px solid var(--border);
