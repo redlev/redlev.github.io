@@ -5,7 +5,7 @@
   1. Abre data/content.json en GitHub.
   2. Edita activities.upcoming[1] para el seminario mensual.
   3. Edita featured_research para el artículo destacado.
-  4. Si agregas imágenes, súbelas a assets/img/ y usa esa ruta en el JSON.
+  4. Si agregas imágenes, súbelas a una subcarpeta de assets/img/ y usa esa ruta en el JSON.
 */
 
 (function () {
@@ -213,10 +213,24 @@
     wrap.replaceChildren();
 
     items.forEach((item) => {
+      const hasImage = Boolean(item.image);
       const card = document.createElement("article");
-      card.className = "card";
+      card.className = hasImage ? "card recent-card recent-card-with-media" : "card recent-card";
 
-      card.append(
+      if (hasImage) {
+        const media = document.createElement("figure");
+        media.className = "recent-media";
+        const img = document.createElement("img");
+        img.src = item.image;
+        img.alt = item.image_alt || item.title || "Imagen de actividad reciente REDLEV";
+        media.appendChild(img);
+        card.appendChild(media);
+      }
+
+      const body = document.createElement("div");
+      body.className = "recent-card-body";
+
+      body.append(
         textElement("h3", item.title || "Seminario REDLEV", "h3"),
         textElement("p", item.subtitle || "", "text"),
         textElement("p", item.speaker || "", "meta")
@@ -232,9 +246,10 @@
         link.rel = "noreferrer";
         link.textContent = item.cta_label || "Ver";
         actionsWrap.appendChild(link);
-        card.appendChild(actionsWrap);
+        body.appendChild(actionsWrap);
       }
 
+      card.appendChild(body);
       wrap.appendChild(card);
     });
   }

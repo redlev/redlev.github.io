@@ -411,6 +411,36 @@ code {
   gap: 12px;
 }
 
+.recent-card {
+  display: grid;
+  gap: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+.recent-card-with-media {
+  grid-template-columns: 112px minmax(0, 1fr);
+}
+
+.recent-media {
+  min-height: 100%;
+  margin: 0;
+  background: #fff;
+  overflow: hidden;
+}
+
+.recent-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.recent-card-body {
+  min-width: 0;
+  padding: 16px;
+}
+
 .research-card {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(280px, 0.48fr);

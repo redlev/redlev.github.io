@@ -9,7 +9,7 @@ Esta carpeta contiene una página web estática: no usa WordPress ni una base de
 Para actualizaciones mensuales, usa este orden:
 
 1. Edita `data/content.json`.
-2. Sube las imágenes nuevas a `assets/img/`, si las hay.
+2. Sube las imágenes nuevas a la subcarpeta correcta dentro de `assets/img/`, si las hay.
 3. Revisa que el sitio se vea bien.
 4. Publica los cambios en GitHub.
 5. Abre `https://redlev.github.io/` y confirma que la web publicada quedó correcta.
@@ -21,7 +21,10 @@ Para cambios simples, como seminarios, enlaces o artículos destacados, normalme
 | Archivo o carpeta | Para qué sirve | Cuándo editarlo |
 | --- | --- | --- |
 | `data/content.json` | Guarda textos, enlaces, actividades, comité e investigación destacada. | Casi siempre. Es el archivo principal para actualizaciones de contenido. |
-| `assets/img/` | Guarda imágenes usadas por la web. | Cuando agregues una foto, afiche, logo o imagen de artículo. |
+| `assets/img/events/` | Guarda afiches, banners y fotos de actividades. | Cuando agregues seminarios, simposios o actividades recientes. |
+| `assets/img/committee/` | Guarda fotografías de integrantes del comité. | Cuando agregues o reemplaces fotos del comité. |
+| `assets/img/research/` | Guarda imágenes asociadas al artículo destacado. | Cuando cambies la publicación destacada del mes. |
+| `assets/img/site/` | Guarda recursos fijos del sitio, como el logo. | Casi nunca. Solo si cambias identidad visual. |
 | `index.html` | Define la estructura de la página principal. | Solo si quieres agregar, quitar o reorganizar secciones. |
 | `simposio-2026.html` | Página secundaria del 6to Simposio. | Cuando haya que completar programa, inscripción, comité, alojamiento u otros detalles del evento. |
 | `assets/css/styles.css` | Controla el diseño visual: colores, tamaños, columnas, botones, tarjetas y versión móvil. | Cuando quieras cambiar el aspecto de la web. |
@@ -44,7 +47,7 @@ Este será probablemente el flujo más cómodo para actualizaciones mensuales.
 
 Si también necesitas subir una imagen:
 
-1. Entra a la carpeta `assets/img/`.
+1. Entra a la subcarpeta que corresponda dentro de `assets/img/`: `events`, `committee`, `research` o `site`.
 2. Usa `Add file > Upload files`.
 3. Arrastra la imagen.
 4. Guarda el cambio con `Commit changes`.
@@ -53,16 +56,29 @@ Si también necesitas subir una imagen:
 Ejemplo de ruta de imagen:
 
 ```json
-"image": "assets/img/afiche-seminario-junio-2026.jpg"
+"image": "assets/img/events/afiche-seminario-junio-2026.jpg"
 ```
 
-Usa nombres simples para imágenes: minúsculas, sin espacios y sin tildes. Por ejemplo:
+Para nuevas imágenes, usa nombres simples: minúsculas, sin espacios y sin tildes. Si una imagen ya existe con espacios o tildes, respeta el nombre exacto en la ruta. Por ejemplo:
 
 ```text
 seminario-junio-2026.jpg
 simposio-manizales-programa.png
 articulo-destacado-nogales.jpg
 ```
+
+## Organización de imágenes
+
+Para que la carpeta de recursos sea más fácil de mantener, las imágenes se organizan así:
+
+| Carpeta | Uso recomendado | Ejemplo de ruta |
+| --- | --- | --- |
+| `assets/img/events/` | Actividades próximas, recientes, seminarios y simposios. | `assets/img/events/Seminario_agrivoltaico.png` |
+| `assets/img/committee/` | Fotografías de integrantes del comité. | `assets/img/committee/Eleinis Avila-Lovera.jpg` |
+| `assets/img/research/` | Imágenes de artículos destacados. | `assets/img/research/articulo-destacado-nogales.jpg` |
+| `assets/img/site/` | Logo y recursos permanentes de la web. | `assets/img/site/logo.png` |
+
+Cuando agregues una imagen nueva, súbela a la subcarpeta correcta y copia esa ruta completa en `data/content.json`.
 
 ## Editar localmente con GitHub Desktop
 
@@ -172,7 +188,7 @@ Campos importantes:
 | `description` | Descripción breve. |
 | `cta_label` | Texto del botón. |
 | `url` | Enlace del botón. Puede ser una página interna, un formulario o quedar vacío. |
-| `image` | Ruta de imagen. Usa `assets/img/placeholder-banner.jpg` como imagen temporal o déjala como `""` si no quieres imagen. |
+| `image` | Ruta de imagen. Usa `assets/img/events/placeholder-banner.jpg` como imagen temporal o déjala como `""` si no quieres imagen. |
 | `image_alt` | Descripción de la imagen para accesibilidad. |
 
 Ejemplo de seminario mensual con imagen temporal:
@@ -187,7 +203,7 @@ Ejemplo de seminario mensual con imagen temporal:
   "description": "Seminario abierto de REDLEV sobre ecofisiología vegetal y estrés hídrico.",
   "cta_label": "Inscripción",
   "url": "https://forms.gle/ejemplo",
-  "image": "assets/img/placeholder-banner.jpg",
+  "image": "assets/img/events/placeholder-banner.jpg",
   "image_alt": "Banner del seminario mensual"
 }
 ```
@@ -204,7 +220,7 @@ Ejemplo de actividad con imagen:
   "description": "Encuentro latinoamericano de investigadoras e investigadores en ecofisiología vegetal.",
   "cta_label": "Ver página del simposio",
   "url": "simposio-2026.html",
-  "image": "assets/img/manizales-colombia.jfif",
+  "image": "assets/img/events/manizales-colombia.jfif",
   "image_alt": "Vista de Manizales, Colombia"
 }
 ```
@@ -217,7 +233,7 @@ Busca este bloque:
 "recent": [
 ```
 
-Ahí puedes mantener actividades ya realizadas, grabaciones de YouTube o eventos pasados. Cada actividad reciente usa esta estructura:
+Ahí puedes mantener actividades ya realizadas, grabaciones de YouTube o eventos pasados. Cada actividad reciente puede incluir una imagen a la izquierda con los campos `image` e `image_alt`.
 
 ```json
 {
@@ -225,7 +241,9 @@ Ahí puedes mantener actividades ya realizadas, grabaciones de YouTube o eventos
   "subtitle": "Impacto de perturbaciones asociadas al cambio climático en los bosques tropicales",
   "speaker": "Dra. Chris Smith-Martin (Universidad de Minnesota)",
   "cta_label": "Ver en YouTube",
-  "cta_url": "https://www.youtube.com/watch?v=..."
+  "cta_url": "https://www.youtube.com/watch?v=...",
+  "image": "assets/img/events/Seminario_agrivoltaico.png",
+  "image_alt": "Afiche del seminario REDLEV de octubre 2025"
 }
 ```
 
@@ -271,7 +289,7 @@ Cada integrante usa esta estructura:
   "name": "Nombre Apellido",
   "url": "https://enlace-al-perfil.example",
   "focus": "Área de trabajo o línea de investigación",
-  "image": "assets/img/foto-integrante.jpg",
+  "image": "assets/img/committee/foto-integrante.jpg",
   "image_alt": "Nombre Apellido"
 }
 ```
@@ -305,7 +323,7 @@ Ejemplo correcto:
 
 ```json
 "url": "",
-"image": "assets/img/foto.jpg",
+"image": "assets/img/events/foto.jpg",
 "featured": false
 ```
 
@@ -313,7 +331,7 @@ Ejemplo incorrecto:
 
 ```json
 "url": "",
-"image": "assets/img/foto.jpg",
+"image": "assets/img/events/foto.jpg",
 "featured": "false",
 ```
 
@@ -385,7 +403,7 @@ Luego usa funciones como `renderActivities()` y `renderResearch()` para crear el
 | Fecha de seminario | `data/content.json` |
 | Artículo destacado | `data/content.json` |
 | Enlace a formulario | `data/content.json` |
-| Foto de actividad | `assets/img/` y `data/content.json` |
+| Foto de actividad | `assets/img/events/` y `data/content.json` |
 | Texto fijo del menú | `index.html` |
 | Colores o tamaños | `assets/css/styles.css` |
 | Cantidad de actividades visibles | `assets/js/main.js` |
@@ -396,7 +414,7 @@ Luego usa funciones como `renderActivities()` y `renderResearch()` para crear el
 Antes de publicar, revisa:
 
 1. `data/content.json` no tiene errores de comas, comillas o llaves.
-2. Las imágenes existen en `assets/img/`.
+2. Las imágenes existen en la subcarpeta correcta de `assets/img/`.
 3. Las rutas de imágenes coinciden exactamente con el nombre del archivo.
 4. Los enlaces abren correctamente.
 5. La página se ve bien en computador y celular.
@@ -421,8 +439,8 @@ Probablemente hay un error en `data/content.json`. Revisa comas, comillas, llave
 
 Revisa que:
 
-1. La imagen esté subida a `assets/img/`.
-2. La ruta en JSON empiece con `assets/img/`.
+1. La imagen esté subida a la subcarpeta correcta: `assets/img/events/`, `assets/img/committee/`, `assets/img/research/` o `assets/img/site/`.
+2. La ruta en JSON empiece con esa subcarpeta.
 3. El nombre coincida exactamente.
 4. La extensión sea correcta: `.jpg`, `.jpeg`, `.png`, `.webp` o `.jfif`.
 
@@ -442,8 +460,8 @@ Prueba:
 En `index.html`, las rutas tienen una versión al final:
 
 ```html
-<link rel="stylesheet" href="assets/css/styles.css?v=20260515-4" />
-<script src="assets/js/main.js?v=20260515-2" defer></script>
+<link rel="stylesheet" href="assets/css/styles.css?v=20260515-7" />
+<script src="assets/js/main.js?v=20260515-5" defer></script>
 ```
 
 Si modificas CSS o JavaScript, cambia el número después de `?v=`. Esto ayuda a que el navegador descargue la versión nueva.
