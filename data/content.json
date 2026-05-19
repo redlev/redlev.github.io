@@ -54,7 +54,7 @@
         "title": "Seminario mensual REDLEV (actualizar cada mes)",
         "location": "Online",
         "date_text": "Fecha · Hora · Zona horaria",
-        "description": "Descripción breve del seminario o evento. Reemplaza este texto cada mes desde GitHub.",
+        "description": "Descripción breve del seminario o evento.",
         "cta_label": "Inscripción / Información",
         "url": "",
         "image": "assets/img/events/placeholder-banner.jpg",
