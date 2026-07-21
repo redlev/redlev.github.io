@@ -73,7 +73,7 @@ Para que la carpeta de recursos sea más fácil de mantener, las imágenes se or
 
 | Carpeta | Uso recomendado | Ejemplo de ruta |
 | --- | --- | --- |
-| `assets/img/events/` | Actividades próximas, recientes, seminarios y simposios. | `assets/img/events/Seminario_agrivoltaico.png` |
+| `assets/img/events/` | Actividades próximas, recientes, seminarios y simposios. | `assets/img/events/seminario-papa.jpg` |
 | `assets/img/committee/` | Fotografías de integrantes del comité. | `assets/img/committee/Eleinis Avila-Lovera.jpg` |
 | `assets/img/research/` | Imágenes de artículos destacados. | `assets/img/research/articulo-destacado-nogales.jpg` |
 | `assets/img/site/` | Logo y recursos permanentes de la web. | `assets/img/site/logo.png` |
@@ -237,15 +237,17 @@ Ahí puedes mantener actividades ya realizadas, grabaciones de YouTube o eventos
 
 ```json
 {
-  "title": "Seminario REDLEV de octubre 2025",
-  "subtitle": "Impacto de perturbaciones asociadas al cambio climático en los bosques tropicales",
-  "speaker": "Dra. Chris Smith-Martin (Universidad de Minnesota)",
+  "title": "Último seminario REDLEV",
+  "subtitle": "Aspectos fisiológicos de la reflectancia del dosel en papa bajo diferentes niveles de estrés hídrico",
+  "speaker": "Grabación disponible en el canal de YouTube de REDLEV",
   "cta_label": "Ver en YouTube",
-  "cta_url": "https://www.youtube.com/watch?v=...",
-  "image": "assets/img/events/Seminario_agrivoltaico.png",
-  "image_alt": "Afiche del seminario REDLEV de octubre 2025"
+  "cta_url": "https://www.youtube.com/watch?v=29iBNL49wAY",
+  "image": "assets/img/events/seminario-papa.jpg",
+  "image_alt": "Cultivo joven de papa dispuesto en surcos"
 }
 ```
+
+La fotografía genérica de papa usada actualmente es `assets/img/events/seminario-papa.jpg`. Proviene del archivo `Potato field germany.JPG` de Wikimedia Commons, publicado en dominio público. Puedes reemplazarla manteniendo el mismo nombre o subir otra imagen y cambiar la ruta en `data/content.json`.
 
 ### Investigación destacada
 

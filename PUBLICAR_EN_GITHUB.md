@@ -69,6 +69,8 @@ Ejemplo:
 "image": "assets/img/events/afiche-seminario-junio-2026.jpg"
 ```
 
+La imagen que acompaña al último seminario se configura en `activities.recent` dentro de `data/content.json`. Actualmente usa `assets/img/events/seminario-papa.jpg`; para cambiarla, sube la nueva imagen a `assets/img/events/` y actualiza los campos `image` e `image_alt`.
+
 ## Opción 2: publicar con GitHub Desktop
 
 Esta opción es útil cuando quieres editar varios archivos, revisar cambios con más calma o trabajar sin depender del editor web.

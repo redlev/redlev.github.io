@@ -72,13 +72,13 @@
         "image_alt": "Afiche del 5to Simposio Latinoamericano de Ecofisiología Vegetal"
       },
       {
-        "title": "Seminario REDLEV de abril 2026",
-        "subtitle": "Aclimatación fisiológica y estructural progresiva del cerezo dulce a un sistema agrivoltaico dinámico",
-        "speaker": "Dra (c). Marcia Montedónico (Universidad de Chile)",
+        "title": "Último seminario REDLEV",
+        "subtitle": "Aspectos fisiológicos de la reflectancia del dosel en papa bajo diferentes niveles de estrés hídrico",
+        "speaker": "Grabación disponible en el canal de YouTube de REDLEV",
         "cta_label": "Ver en YouTube",
-        "cta_url": "https://youtu.be/UkbMHq-4Ows?si=SpGLI2WG-GjAZkjE",
-        "image": "assets/img/events/Seminario_agrivoltaico.png",
-        "image_alt": "Fotografía sistema agrivoltaico seminario REDLEV de octubre 2025"
+        "cta_url": "https://www.youtube.com/watch?v=29iBNL49wAY",
+        "image": "assets/img/events/seminario-papa.jpg",
+        "image_alt": "Cultivo joven de papa dispuesto en surcos"
       }
     ]
   },
