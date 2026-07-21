@@ -1,7 +1,7 @@
 {
   "_instructions": {
     "how_to_edit": "Edita este archivo para actualizar la web sin tocar HTML, CSS o JavaScript. Mantén las comillas, comas y llaves tal como están. Si un enlace no existe todavía, deja su valor como cadena vacía: \"\".",
-    "monthly_sections": "Cada mes normalmente editarás: activities.upcoming[0] para la actividad destacada, activities.upcoming[1] para el seminario mensual, activities.recent para actividades recientes y featured_research para la publicación destacada.",
+    "monthly_sections": "Cada mes normalmente editarás: activities.upcoming para próximas actividades, activities.recent para actividades recientes y featured_research para la publicación destacada. Usa published: false mientras una actividad todavía sea un borrador.",
     "images": "Sube imágenes a la subcarpeta adecuada: assets/img/events/, assets/img/committee/, assets/img/research/ o assets/img/site/. Luego escribe aquí la ruta exacta."
   },
   "site": {
@@ -9,7 +9,7 @@
     "tagline": "Red Latinoamericana de Ecofisiología Vegetal",
     "founded_year": 2020,
     "members_count": 144,
-    "seminars_frequency": "Mensual/zoom",
+    "seminars_frequency": "Mensual · Zoom",
     "default_timezone_label": "UTC/GMT-5 (hora de Panamá)"
   },
   "links": {
@@ -23,7 +23,7 @@
     "linkedin": ""
   },
   "home": {
-    "objective": "La Red Latinoamericana de Ecofisiología Vegetal (REDLEV) fue creada en el año 2020 de la mano de científicas y científicos de Latinoamérica. Nuestra intención es crear redes entre investigadores a lo largo y ancho del continente, y dar a conocer la ciencia latina en nuestros idiomas."
+    "objective": "REDLEV conecta a científicas y científicos de Latinoamérica para crear redes, compartir conocimiento y dar visibilidad a la ciencia de nuestra región, en nuestros idiomas."
   },
   "about": {
     "intro": "La REDLEV tiene como meta la colaboración internacional entre instituciones e investigadores interesados en la ecofisiología vegetal en América Latina. Esta colaboración se lleva a cabo a través de seminarios, intercambio de metodologías e información sobre oportunidades de investigación, financiamiento de proyectos, becas de estudio y asistencia a eventos científicos, entre otros."
@@ -34,9 +34,10 @@
     "button_label": "Formulario de registro"
   },
   "activities": {
-    "_instructions": "Publica aquí hasta dos próximas actividades. La primera puede llevar \"featured\": true para verse más destacada. Si una actividad necesita página propia, usa \"url\": \"simposio-2026.html\" o la ruta correspondiente. Para el seminario mensual puedes usar una imagen en \"image\" o dejarlo como \"\".",
+    "_instructions": "Publica aquí hasta dos próximas actividades. Usa \"published\": true para mostrar una actividad y false para mantenerla como borrador. La primera puede llevar \"featured\": true. Si necesita página propia, usa \"url\": \"simposio-2026.html\" o la ruta correspondiente.",
     "upcoming": [
       {
+        "published": true,
         "featured": true,
         "eyebrow": "Actividad destacada",
         "title": "6to Simposio Latinoamericano de Ecofisiología Vegetal",
@@ -45,39 +46,45 @@
         "description": "Encuentro latinoamericano de investigadoras e investigadores en ecofisiología vegetal. La información específica del evento estará disponible en una página secundaria.",
         "cta_label": "Ver página del simposio",
         "url": "simposio-2026.html",
-        "image": "assets/img/events/manizales-colombia.jfif",
+        "image": "assets/img/events/manizales_main.jpg",
         "image_alt": "Vista de Manizales, Colombia"
       },
       {
+        "published": true,
         "featured": false,
         "eyebrow": "Seminario mensual",
-        "title": "Seminario mensual REDLEV (actualizar cada mes)",
-        "location": "Online",
-        "date_text": "Fecha · Hora · Zona horaria",
-        "description": "Descripción breve del seminario o evento.",
-        "cta_label": "Inscripción / Información",
-        "url": "",
-        "image": "assets/img/events/placeholder-banner.jpg",
-        "image_alt": "Banner del seminario mensual"
+        "title": "Causas fisiológicas del decaimiento en especies arbóreas de los bosques del sur de Chile",
+        "location": "En línea por Zoom",
+        "date_text": "Viernes 31 de julio de 2026 · 10:00 h (hora de Panamá)",
+        "description": "Seminario de julio de la Red Latinoamericana de Ecofisiología Vegetal, a cargo de la Dra. Frida Piper, del Instituto de Ciencias Biológicas de la Universidad de Talca, Chile.",
+        "cta_label": "Inscribirse en Zoom",
+        "url": "https://reuna.zoom.us/meeting/register/eoaoQ2SxRhW8YikllOwGfw",
+        "image": "assets/img/events/frida-piper-terreno-vertical-web.jpg",
+        "image_alt": "Equipamiento ecofisiológico instalado en un bosque del sur de Chile",
+        "portrait_image": "assets/img/events/frida-piper-retrato.png",
+        "portrait_image_alt": "Frida Piper, investigadora de la Universidad de Talca"
       }
     ],
     "recent": [
       {
+        "published": true,
         "title": "5to Simposio Latinoamericano de Ecofisiología Vegetal",
         "subtitle": "Simposio anual celebrado por la Red Latinoamericana de Ecofisiología Vegetal",
         "speaker": "Integrantes de la REDLEV",
         "cta_label": "Ver en YouTube",
         "cta_url": "https://youtu.be/OF8qiHpHMeY",
-        "image": "assets/img/site/logo-isotipo-solo.png",
-        "image_alt": "Afiche del 5to Simposio Latinoamericano de Ecofisiología Vegetal"
+        "image": "assets/img/events/5to-simposio-redlev-web.jpg",
+        "image_alt": "Afiche del 5to Simposio Latinoamericano de Ecofisiología Vegetal",
+        "image_fit": "contain"
       },
       {
+        "published": true,
         "title": "Último seminario REDLEV",
         "subtitle": "Aspectos fisiológicos de la reflectancia del dosel en papa bajo diferentes niveles de estrés hídrico",
         "speaker": "Grabación disponible en el canal de YouTube de REDLEV",
         "cta_label": "Ver en YouTube",
         "cta_url": "https://www.youtube.com/watch?v=29iBNL49wAY",
-        "image": "assets/img/events/seminario-papa.jpg",
+        "image": "assets/img/events/seminario-papa-web.jpg",
         "image_alt": "Cultivo joven de papa dispuesto en surcos"
       }
     ]
@@ -90,7 +97,7 @@
     "abstract": "Los portainjertos se emplean ampliamente en nogal para modular el vigor y la tolerancia al estrés; sin embargo, persiste la incertidumbre sobre hasta qué punto los rasgos del portainjerto se traducen en el desempeño del vástago bajo sequía. En este estudio se evaluó si portainjertos clonales contrastantes RX1 y VX211, y un portainjerto de semilla de Juglans regia, modifican la capacidad hidráulica radicular y, en consecuencia, el estado hídrico y el intercambio gaseoso del cultivar Chandler cultivado en maceta bajo un déficit hídrico progresivo.\n\nChandler se injertó sobre plántulas de J. regia (CH/JU) o sobre los clonales RX1 y VX211 (CH/RX1, CH/VX211). Asimismo, se incluyeron plantas no injertadas de RX1 y VX211 para caracterizar rasgos dependientes del genotipo en ausencia de la unión de injerto. Las plantas se mantuvieron bajo condiciones bien regadas o sometidas a déficit hídrico progresivo. Se midieron el diámetro de tronco, la masa seca de raíces, la conductancia y conductividad hidráulica radicular (Kr25, Lr25), potenciales hídricos foliares, intercambio gaseoso, punto de pérdida de turgor (TLP), área de hidroscape (HA) y la transpiración de planta completa.\n\nEl déficit hídrico redujo el intercambio gaseoso, sin afectar la masa radicular ni el diámetro de tronco. La biomasa y los rasgos hidráulicos de la raíz variaron entre combinaciones vástago-portainjerto, con CH/JU y VX211 mostrando mayores Kr25 y/o Lr25 que RX1. Entre combinaciones injertadas, el TLP fue similar y los valores de HA fueron bajos, siendo CH/JU el de menor HA relativa.",
     "paper_label": "Ver publicación",
     "paper_url": "https://doi.org/10.1007/s11104-026-08293-1",
-    "image": "assets/img/research/articulo-destacado-nogales.jpg",
+    "image": "assets/img/research/articulo-destacado-nogales-web.jpg",
     "image_alt": "Nogales usados para investigación ecofisiológica"
   },
   "committee": [
@@ -98,28 +105,28 @@
       "name": "Eleinis Ávila-Lovera",
       "url": "https://www.avilaloveralab.com",
       "focus": "Ecofisiología de plantas de zonas áridas en áreas tropicales y templadas",
-      "image": "assets/img/committee/Eleinis Avila-Lovera.jpg",
+      "image": "assets/img/committee/eleinis-avila-lovera-thumb.jpg",
       "image_alt": "Eleinis Ávila-Lovera"
     },
     {
       "name": "Aleyda Acosta-Rangel",
       "url": "https://scholar.google.com/citations?user=3_ZIWa4AAAAJ&hl=en",
       "focus": "Ecofisiología de plantas de cultivo (aguacate, cítricos, lúpulo)",
-      "image": "assets/img/committee/Aleyda Acosta-Rangel.jpg",
+      "image": "assets/img/committee/aleyda-acosta-rangel-thumb.jpg",
       "image_alt": "Aleyda Acosta-Rangel"
     },
     {
       "name": "Carlos Aucique-Perez",
       "url": "https://www.linkedin.com/in/carlos-eduardo-aucique-perez-4777b046?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
       "focus": "Fisiología vegetal, fenotipado de plantas de cultivo",
-      "image": "assets/img/committee/Carlos Aucique-Pérez.jpg",
+      "image": "assets/img/committee/carlos-aucique-perez-thumb.jpg",
       "image_alt": "Carlos Aucique-Perez"
     },
     {
       "name": "Marco Garrido-Salinas",
       "url": "https://www.researchgate.net/profile/Marco-Garrido?ev=hdr_xprf",
       "focus": "Ecofisiología de plantas frutales, agua en el continuo suelo-planta-atmósfera",
-      "image": "assets/img/committee/Marco Garrido-Salinas.jpg",
+      "image": "assets/img/committee/marco-garrido-salinas-thumb.jpg",
       "image_alt": "Marco Garrido-Salinas"
     }
   ]

@@ -3,10 +3,43 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Red Latinoamericana de Ecofisiología Vegetal (REDLEV)." />
+  <meta name="description" content="REDLEV conecta a la comunidad latinoamericana de ecofisiología vegetal mediante seminarios, investigación y colaboración científica." />
+  <meta name="theme-color" content="#003060" />
+  <link rel="canonical" href="https://redlev.github.io/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_LA" />
+  <meta property="og:site_name" content="REDLEV" />
+  <meta property="og:title" content="REDLEV | Red Latinoamericana de Ecofisiología Vegetal" />
+  <meta property="og:description" content="Ciencia, colaboración y comunidad para la ecofisiología vegetal latinoamericana." />
+  <meta property="og:url" content="https://redlev.github.io/" />
+  <meta property="og:image" content="https://redlev.github.io/assets/img/site/og-redlev.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="REDLEV, Red Latinoamericana de Ecofisiología Vegetal" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="REDLEV | Ecofisiología Vegetal" />
+  <meta name="twitter:description" content="Ciencia, colaboración y comunidad para la ecofisiología vegetal latinoamericana." />
+  <meta name="twitter:image" content="https://redlev.github.io/assets/img/site/og-redlev.jpg" />
   <title>REDLEV | Red Latinoamericana de Ecofisiología Vegetal</title>
-  <link rel="stylesheet" href="assets/css/styles.css?v=20260515-7" />
-  <link rel="icon" href="assets/img/site/logo-isotipo-solo.png" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260721-9" />
+  <link rel="icon" href="assets/img/site/logo-isotipo-web.png" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Red Latinoamericana de Ecofisiología Vegetal",
+      "alternateName": "REDLEV",
+      "url": "https://redlev.github.io/",
+      "logo": "https://redlev.github.io/assets/img/site/logo-isotipo-web.png",
+      "email": "ecofisiologialatinoamerica@gmail.com",
+      "foundingDate": "2020",
+      "sameAs": [
+        "https://www.youtube.com/@redlatinoamericanadeecofis2139",
+        "https://x.com/ecofisiologia",
+        "https://www.facebook.com/groups/547466132928748/"
+      ]
+    }
+  </script>
 </head>
 
 <body>
@@ -15,7 +48,7 @@
   <header class="header" role="banner">
     <div class="container header-row">
       <a class="brand" href="#inicio" aria-label="Ir al inicio">
-        <img class="brand-logo" src="assets/img/site/logo-isotipo-solo.png" alt="Logo REDLEV" />
+        <img class="brand-logo" src="assets/img/site/logo-isotipo-web.png" alt="Logo REDLEV" width="160" height="160" />
         <span class="brand-text">
           <span class="brand-name" id="siteName">REDLEV</span>
           <span class="brand-tagline" id="siteTagline">Red Latinoamericana de Ecofisiología Vegetal</span>
@@ -31,38 +64,47 @@
       <nav id="nav" class="nav" aria-label="Navegación principal">
         <a class="nav-link" href="#inicio">Inicio</a>
         <a class="nav-link" href="#quienes">Quiénes somos</a>
-        <a class="nav-link" href="#actividades">Próximas actividades</a>
+        <a class="nav-link" href="#actividades">Actividades</a>
         <a class="nav-link nav-event" href="simposio-2026.html">6to Simposio</a>
-        <a class="nav-link" href="#investigacion">Investigación destacada</a>
+        <a class="nav-link" href="#investigacion">Investigación</a>
         <a class="nav-link nav-cta" id="joinLink" href="#" target="_blank" rel="noreferrer">Únete</a>
       </nav>
     </div>
   </header>
 
-  <main class="container" role="main">
+  <main role="main">
     <section id="inicio" class="hero" aria-label="Presentación">
-      <div class="hero-copy">
-        <p class="eyebrow">REDLEV</p>
-        <h1 id="heroTitle">Red Latinoamericana de Ecofisiología Vegetal</h1>
-        <p class="lead" id="heroObjective"></p>
+      <picture class="hero-picture">
+        <source media="(max-width: 980px)" srcset="assets/img/site/redlev-hero-wetland-mobile.jpg" width="720" height="960" />
+        <img class="hero-background" src="assets/img/site/redlev-hero-wetland.jpg" alt="Vegetación creciendo junto a un curso de agua" width="1440" height="810" fetchpriority="high" decoding="async" />
+      </picture>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Ciencia vegetal en red</p>
+          <h1 id="heroTitle">Red Latinoamericana de Ecofisiología Vegetal</h1>
+          <p class="lead" id="heroObjective">REDLEV conecta a científicas y científicos de Latinoamérica para crear redes, compartir conocimiento y dar visibilidad a la ciencia de nuestra región.</p>
 
-        <div class="actions">
-          <a class="button" id="contactLink" href="#" target="_blank" rel="noreferrer">Contacto</a>
-          <a class="button button-secondary" href="#actividades">Ver próximas actividades</a>
-        </div>
+          <div class="actions">
+            <a class="button" id="contactLink" href="#" target="_blank" rel="noreferrer">Contacto</a>
+            <a class="button button-secondary" href="#actividades">Ver actividades</a>
+          </div>
 
-        <div class="social" aria-label="Redes sociales">
-          <a class="social-link" id="youtubeLink" href="#" target="_blank" rel="noreferrer">YouTube</a>
-          <a class="social-link" id="xLink" href="#" target="_blank" rel="noreferrer">X</a>
-          <a class="social-link" id="facebookLink" href="#" target="_blank" rel="noreferrer">Facebook</a>
-          <a class="social-link" id="instagramLink" href="#" target="_blank" rel="noreferrer">Instagram</a>
-          <a class="social-link" id="linkedinLink" href="#" target="_blank" rel="noreferrer">LinkedIn</a>
+          <div class="social" aria-label="Redes sociales">
+            <a class="social-link" id="youtubeLink" href="#" target="_blank" rel="noreferrer">YouTube</a>
+            <a class="social-link" id="xLink" href="#" target="_blank" rel="noreferrer">X</a>
+            <a class="social-link" id="facebookLink" href="#" target="_blank" rel="noreferrer">Facebook</a>
+            <a class="social-link" id="instagramLink" href="#" target="_blank" rel="noreferrer">Instagram</a>
+            <a class="social-link" id="linkedinLink" href="#" target="_blank" rel="noreferrer">LinkedIn</a>
+          </div>
         </div>
       </div>
+    </section>
 
-      <aside class="card hero-card" aria-label="Estado de la red">
-        <h2 class="h2">Datos de la red</h2>
-        <div class="metrics">
+    <section class="network-band" aria-label="Datos de la red">
+      <div class="container network-band-inner">
+        <h2 class="sr-only">Datos de la red</h2>
+        <p class="network-label">Una comunidad latinoamericana en movimiento</p>
+        <div class="metrics" aria-label="Indicadores de REDLEV">
           <div class="metric">
             <div class="metric-value" id="foundedYear">2020</div>
             <div class="metric-label">Fundación</div>
@@ -80,14 +122,41 @@
             <div class="metric-label" id="timezoneMetricLabel">Hora Panamá (UTC-5)</div>
           </div>
         </div>
-      </aside>
+      </div>
     </section>
 
-    <section id="quienes" class="section" aria-label="Quiénes somos">
+    <p class="container content-status" id="contentStatus" role="status" hidden></p>
+
+    <section id="quienes" class="container section" aria-label="Quiénes somos">
       <div class="section-head">
         <h2 class="h2">Quiénes somos</h2>
       </div>
-      <p class="text" id="aboutText"></p>
+      <p class="text" id="aboutText">La REDLEV promueve la colaboración internacional entre instituciones e investigadores interesados en la ecofisiología vegetal en América Latina.</p>
+
+      <div class="ecophysiology-feature">
+        <div class="ecophysiology-copy">
+          <h3 class="h3 ecophysiology-title">Lo que nos mueve: la ecofisiología vegetal</h3>
+          <div>
+            <p class="text ecophysiology-definition">La ecofisiología vegetal investiga cómo las plantas perciben y responden a su ambiente, conectando procesos como la fotosíntesis, la respiración y las relaciones hídricas con su supervivencia, distribución y productividad. Al integrar escalas que van desde los tejidos hasta los doseles, los ecosistemas y el planeta, ayuda a comprender y anticipar la adaptación de la vegetación y los cultivos ante el estrés y el cambio climático.</p>
+            <p class="story-source">Síntesis basada en <cite><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5047120/" target="_blank" rel="noreferrer">Ainsworth, Bernacchi y Dohleman (2016), “Focus on Ecophysiology”, <span lang="en">Plant Physiology</span> 172(2): 619–621</a></cite>.</p>
+          </div>
+        </div>
+
+        <div class="story-gallery" aria-label="La ecofisiología vegetal en imágenes">
+          <figure class="story-item">
+            <img src="assets/img/site/redlev-ecophysiology-leaves.jpg" alt="Hojas jóvenes iluminadas a contraluz" width="960" height="640" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="story-item">
+            <img src="assets/img/site/redlev-ecophysiology-measurement.jpg" alt="Preparación de una hoja para una medición fisiológica" width="960" height="640" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="story-item">
+            <img src="assets/img/site/redlev-ecophysiology-field-instrument.jpg" alt="Equipo de medición instalado sobre hojas y frutos en terreno" width="960" height="640" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="story-item">
+            <img src="assets/img/site/redlev-ecophysiology-wetland.jpg" alt="Vegetación junto a un curso de agua" width="960" height="640" loading="lazy" decoding="async" />
+          </figure>
+        </div>
+      </div>
 
       <div class="callout">
         <div>
@@ -100,12 +169,12 @@
       </div>
     </section>
 
-    <section id="actividades" class="section" aria-label="Próximas actividades">
+    <section id="actividades" class="container section" aria-label="Próximas actividades">
       <div class="section-head">
         <h2 class="h2">Próximas actividades</h2>
       </div>
 
-      <div id="upcomingActivities" class="activities-list"></div>
+      <div id="upcomingActivities" class="activities-list" aria-live="polite"></div>
 
       <div class="section-subhead">
         <h3 class="h3">Actividades recientes</h3>
@@ -113,7 +182,7 @@
       <div id="recentActivities" class="grid"></div>
     </section>
 
-    <section id="investigacion" class="section" aria-label="Investigación destacada">
+    <section id="investigacion" class="container section" aria-label="Investigación destacada">
       <div class="section-head">
         <h2 class="h2">Investigación destacada de miembros REDLEV</h2>
       </div>
@@ -123,25 +192,29 @@
           <p class="eyebrow" id="researchEyebrow">Este mes destacamos</p>
           <h3 class="h3" id="researchTitle">--</h3>
           <p class="meta" id="researchCitation">--</p>
-          <p class="text" id="researchAbstract">--</p>
+          <p class="text" id="researchAbstract">Conoce la investigación destacada de integrantes de REDLEV.</p>
+          <details class="research-details" id="researchDetails" hidden>
+            <summary>Leer resumen completo</summary>
+            <p class="text" id="researchAbstractMore"></p>
+          </details>
           <div class="actions">
             <a class="button button-secondary" id="researchLink" href="#" target="_blank" rel="noreferrer">Ver publicación</a>
           </div>
         </div>
         <figure class="research-media">
-          <img id="researchImage" src="assets/img/research/articulo-destacado-nogales.jpg" alt="Imagen de investigación destacada" />
+          <img id="researchImage" src="assets/img/research/articulo-destacado-nogales-web.jpg" alt="Imagen de investigación destacada" width="420" height="280" loading="lazy" decoding="async" />
         </figure>
       </article>
     </section>
 
-    <section id="comite" class="section" aria-label="Comité">
+    <section id="comite" class="container section" aria-label="Comité">
       <div class="section-head">
         <h2 class="h2">Comité REDLEV</h2>
       </div>
       <div id="committeeGrid" class="grid"></div>
     </section>
 
-    <section class="section" aria-label="Contacto">
+    <section class="container section" aria-label="Contacto">
       <div class="callout">
         <div>
           <h3 class="callout-title">¿Quieres participar o proponer un seminario?</h3>
@@ -164,10 +237,12 @@
 
   <noscript>
     <div class="noscript">
-      Esta web carga su contenido desde <strong>data/content.json</strong>. Activa JavaScript o edita el HTML directamente.
+      Esta web usa JavaScript para mostrar sus novedades. También puedes consultar la
+      <a href="simposio-2026.html">página del 6to Simposio</a> o escribir a
+      <a href="mailto:ecofisiologialatinoamerica@gmail.com">ecofisiologialatinoamerica@gmail.com</a>.
     </div>
   </noscript>
 
-  <script src="assets/js/main.js?v=20260515-5" defer></script>
+  <script src="assets/js/main.js?v=20260721-6" defer></script>
 </body>
 </html>

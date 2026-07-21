@@ -10,7 +10,7 @@
 
 (function () {
   const contentUrl = new URL("data/content.json", window.location.href);
-  contentUrl.searchParams.set("v", Date.now().toString());
+  contentUrl.searchParams.set("v", "20260721-6");
   const $ = (id) => document.getElementById(id);
   const socialIcons = {
     youtube: '<svg viewBox="0 0 24 24" role="img" focusable="false"><path d="M21.6 7.2a3 3 0 0 0-2.1-2.1C17.6 4.6 12 4.6 12 4.6s-5.6 0-7.5.5a3 3 0 0 0-2.1 2.1A31.3 31.3 0 0 0 2 12a31.3 31.3 0 0 0 .4 4.8 3 3 0 0 0 2.1 2.1c1.9.5 7.5.5 7.5.5s5.6 0 7.5-.5a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 22 12a31.3 31.3 0 0 0-.4-4.8ZM10 15.5v-7l6 3.5-6 3.5Z"/></svg>',
@@ -73,10 +73,10 @@
   async function init() {
     bindNavigation();
     actions.text("year", new Date().getFullYear());
-    startPanamáClock();
+    startPanamaClock();
 
     try {
-      const response = await fetch(contentUrl);
+      const response = await fetch(contentUrl, { cache: "no-cache" });
       if (!response.ok) throw new Error("No se pudo cargar data/content.json");
       const data = await response.json();
 
@@ -85,12 +85,13 @@
       renderActivities(data.activities);
       renderResearch(data.featured_research);
       renderCommittee(data.committee || []);
+      const status = $("contentStatus");
+      if (status) status.hidden = true;
     } catch (error) {
       console.error(error);
-      actions.text(
-        "heroObjective",
-        "No se pudo cargar el contenido. Revisa data/content.json y la consola del navegador."
-      );
+      actions.text("contentStatus", "No pudimos actualizar el contenido dinámico. Puedes consultar el simposio y los enlaces de contacto mientras lo solucionamos.");
+      const status = $("contentStatus");
+      if (status) status.hidden = false;
     }
   }
 
@@ -100,15 +101,29 @@
 
     if (!toggle || !nav) return;
 
-    toggle.addEventListener("click", () => {
-      const isOpen = document.body.classList.toggle("nav-open");
+    const setNavigationState = (isOpen) => {
+      document.body.classList.toggle("nav-open", isOpen);
       toggle.setAttribute("aria-expanded", String(isOpen));
+      toggle.setAttribute("aria-label", isOpen ? "Cerrar menú" : "Abrir menú");
+    };
+
+    toggle.addEventListener("click", () => {
+      setNavigationState(!document.body.classList.contains("nav-open"));
     });
 
     nav.addEventListener("click", (event) => {
       if (event.target.closest("a")) {
-        document.body.classList.remove("nav-open");
-        toggle.setAttribute("aria-expanded", "false");
+        setNavigationState(false);
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") setNavigationState(false);
+    });
+
+    document.addEventListener("click", (event) => {
+      if (document.body.classList.contains("nav-open") && !event.target.closest(".header")) {
+        setNavigationState(false);
       }
     });
   }
@@ -147,8 +162,8 @@
   }
 
   function renderActivities(activities = {}) {
-    renderUpcomingActivities(activities.upcoming || []);
-    renderRecentActivities(activities.recent || []);
+    renderUpcomingActivities((activities.upcoming || []).filter((item) => item.published !== false));
+    renderRecentActivities((activities.recent || []).filter((item) => item.published !== false));
   }
 
   function renderUpcomingActivities(items) {
@@ -169,11 +184,29 @@
 
       if (hasImage) {
         const media = document.createElement("figure");
-        media.className = "activity-media";
+        media.className = item.portrait_image ? "activity-media activity-media-with-portrait" : "activity-media";
         const img = document.createElement("img");
+        img.className = "activity-media-context";
         img.src = item.image;
         img.alt = item.image_alt || item.title || "Imagen de actividad REDLEV";
+        img.width = 640;
+        img.height = 400;
+        img.loading = "lazy";
+        img.decoding = "async";
         media.appendChild(img);
+
+        if (item.portrait_image) {
+          const portrait = document.createElement("img");
+          portrait.className = "activity-speaker-portrait";
+          portrait.src = item.portrait_image;
+          portrait.alt = item.portrait_image_alt || "Persona que presenta el seminario";
+          portrait.width = 303;
+          portrait.height = 499;
+          portrait.loading = "lazy";
+          portrait.decoding = "async";
+          media.appendChild(portrait);
+        }
+
         article.appendChild(media);
       }
 
@@ -216,6 +249,9 @@
       const hasImage = Boolean(item.image);
       const card = document.createElement("article");
       card.className = hasImage ? "card recent-card recent-card-with-media" : "card recent-card";
+      if (hasImage && item.image_fit === "contain") {
+        card.classList.add("recent-card-media-contain");
+      }
 
       if (hasImage) {
         const media = document.createElement("figure");
@@ -223,6 +259,10 @@
         const img = document.createElement("img");
         img.src = item.image;
         img.alt = item.image_alt || item.title || "Imagen de actividad reciente REDLEV";
+        img.width = 480;
+        img.height = 270;
+        img.loading = "lazy";
+        img.decoding = "async";
         media.appendChild(img);
         card.appendChild(media);
       }
@@ -231,7 +271,7 @@
       body.className = "recent-card-body";
 
       body.append(
-        textElement("h3", item.title || "Seminario REDLEV", "h3"),
+        textElement("h4", item.title || "Seminario REDLEV", "h3"),
         textElement("p", item.subtitle || "", "text"),
         textElement("p", item.speaker || "", "meta")
       );
@@ -255,12 +295,17 @@
   }
 
   function renderResearch(research = {}) {
+    const abstractParagraphs = String(research.abstract || "").split(/\n\s*\n/).filter(Boolean);
     actions.text("researchEyebrow", research.eyebrow || "Este mes destacamos");
     actions.text("researchTitle", research.title);
     actions.text("researchCitation", research.citation);
-    actions.text("researchAbstract", research.abstract);
+    actions.text("researchAbstract", abstractParagraphs[0] || "");
+    actions.text("researchAbstractMore", abstractParagraphs.slice(1).join("\n\n"));
     actions.link("researchLink", research.paper_url, research.paper_label || "Ver publicación");
     actions.image("researchImage", research.image, research.image_alt || "Imagen de investigación destacada");
+
+    const details = $("researchDetails");
+    if (details) details.hidden = abstractParagraphs.length < 2;
   }
 
   function renderCommittee(items) {
@@ -279,6 +324,10 @@
         img.className = "committee-photo";
         img.src = member.image;
         img.alt = member.image_alt || member.name || "Fotografía de integrante del comité";
+        img.width = 240;
+        img.height = 240;
+        img.loading = "lazy";
+        img.decoding = "async";
         card.appendChild(img);
       }
 
@@ -313,14 +362,14 @@
     return el;
   }
 
-  function startPanamáClock() {
+  function startPanamaClock() {
     const el = $("panamaClock");
     if (!el) return;
 
     let formatter = null;
     try {
       formatter = new Intl.DateTimeFormat("es-PA", {
-        timeZone: "America/Panamá",
+        timeZone: "America/Panama",
         hour: "2-digit",
         minute: "2-digit",
         hour12: false

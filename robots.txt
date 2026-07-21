@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://redlev.github.io/sitemap.xml

@@ -69,7 +69,11 @@ Ejemplo:
 "image": "assets/img/events/afiche-seminario-junio-2026.jpg"
 ```
 
-La imagen que acompaña al último seminario se configura en `activities.recent` dentro de `data/content.json`. Actualmente usa `assets/img/events/seminario-papa.jpg`; para cambiarla, sube la nueva imagen a `assets/img/events/` y actualiza los campos `image` e `image_alt`.
+La imagen que acompaña al último seminario se configura en `activities.recent` dentro de `data/content.json`. Actualmente usa `assets/img/events/seminario-papa-web.jpg`; para cambiarla, sube la nueva imagen a `assets/img/events/` y actualiza los campos `image` e `image_alt`.
+
+En una próxima actividad también puedes usar `portrait_image` y `portrait_image_alt` para superponer el retrato de quien expone sobre la imagen principal. Ambos campos son opcionales.
+
+Las actividades pueden incluir `"published": false` mientras todavía sean borradores. Cambia el valor a `true` solo cuando el título, la fecha, la descripción y los enlaces estén listos para aparecer en la web.
 
 ## Opción 2: publicar con GitHub Desktop
 
@@ -142,6 +146,8 @@ Luego abre:
 http://localhost:8000/
 ```
 
+La dirección local no hace pública la web: es una copia de revisión que solo funciona en tu computador mientras el servidor siga abierto. Este paso permite corregir textos, imágenes o diseño antes de crear un commit o subir archivos a GitHub.
+
 Revisa:
 
 1. La página principal carga contenido.
@@ -189,8 +195,8 @@ Checklist:
 Ejemplo:
 
 ```html
-<link rel="stylesheet" href="assets/css/styles.css?v=20260515-7" />
-<script src="assets/js/main.js?v=20260515-5" defer></script>
+<link rel="stylesheet" href="assets/css/styles.css?v=20260721-9" />
+<script src="assets/js/main.js?v=20260721-6" defer></script>
 ```
 
 El texto después de `?v=` puede ser una fecha o un número. Sirve para evitar que el navegador use una copia antigua.

@@ -80,6 +80,8 @@ Para que la carpeta de recursos sea más fácil de mantener, las imágenes se or
 
 Cuando agregues una imagen nueva, súbela a la subcarpeta correcta y copia esa ruta completa en `data/content.json`.
 
+Las fotografías de la portada y del recorrido visual de la página son recursos permanentes y también están en `assets/img/site/`. Sus nombres comienzan con `redlev-`. Las versiones terminadas en `-mobile` están recortadas y optimizadas especialmente para celulares.
+
 ## Editar localmente con GitHub Desktop
 
 GitHub Desktop permite trabajar en tu computador y luego subir los cambios.
@@ -153,6 +155,14 @@ Luego abre:
 http://localhost:8000/
 ```
 
+Esta dirección es una vista previa privada: solo funciona en tu computador mientras el servidor esté encendido y no publica nada en GitHub. Puedes recorrer los enlaces internos, cambiar el ancho de la ventana y revisar la página del simposio antes de decidir si publicas.
+
+También puedes pedir a Codex:
+
+```text
+Inicia una vista previa local de la web y revísala en computador y celular.
+```
+
 Si el puerto 8000 está ocupado, puedes usar otro:
 
 ```powershell
@@ -180,6 +190,7 @@ Campos importantes:
 
 | Campo | Significado |
 | --- | --- |
+| `published` | `true` para mostrar la actividad. Usa `false` mientras los datos estén incompletos o sean un borrador. |
 | `featured` | `true` si la actividad debe verse más destacada. `false` si es normal. |
 | `eyebrow` | Texto pequeño superior, por ejemplo `Seminario mensual`. |
 | `title` | Título de la actividad. |
@@ -190,11 +201,14 @@ Campos importantes:
 | `url` | Enlace del botón. Puede ser una página interna, un formulario o quedar vacío. |
 | `image` | Ruta de imagen. Usa `assets/img/events/placeholder-banner.jpg` como imagen temporal o déjala como `""` si no quieres imagen. |
 | `image_alt` | Descripción de la imagen para accesibilidad. |
+| `portrait_image` | Campo opcional para mostrar el retrato de quien expone sobre la imagen principal. |
+| `portrait_image_alt` | Descripción accesible del retrato. |
 
-Ejemplo de seminario mensual con imagen temporal:
+Ejemplo de seminario mensual publicado:
 
 ```json
 {
+  "published": true,
   "featured": false,
   "eyebrow": "Seminario mensual",
   "title": "Respuestas hidráulicas de plantas bajo sequía",
@@ -204,14 +218,19 @@ Ejemplo de seminario mensual con imagen temporal:
   "cta_label": "Inscripción",
   "url": "https://forms.gle/ejemplo",
   "image": "assets/img/events/placeholder-banner.jpg",
-  "image_alt": "Banner del seminario mensual"
+  "image_alt": "Banner del seminario mensual",
+  "portrait_image": "assets/img/events/nombre-apellido-retrato.jpg",
+  "portrait_image_alt": "Nombre de la persona que presenta el seminario"
 }
 ```
+
+`portrait_image` y `portrait_image_alt` son opcionales. Si los omites, la tarjeta mostrará solamente la imagen principal.
 
 Ejemplo de actividad con imagen:
 
 ```json
 {
+  "published": true,
   "featured": true,
   "eyebrow": "Actividad destacada",
   "title": "6to Simposio Latinoamericano de Ecofisiología Vegetal",
@@ -220,7 +239,7 @@ Ejemplo de actividad con imagen:
   "description": "Encuentro latinoamericano de investigadoras e investigadores en ecofisiología vegetal.",
   "cta_label": "Ver página del simposio",
   "url": "simposio-2026.html",
-  "image": "assets/img/events/manizales-colombia.jfif",
+  "image": "assets/img/events/manizales_main.jpg",
   "image_alt": "Vista de Manizales, Colombia"
 }
 ```
@@ -237,17 +256,26 @@ Ahí puedes mantener actividades ya realizadas, grabaciones de YouTube o eventos
 
 ```json
 {
+  "published": true,
   "title": "Último seminario REDLEV",
   "subtitle": "Aspectos fisiológicos de la reflectancia del dosel en papa bajo diferentes niveles de estrés hídrico",
   "speaker": "Grabación disponible en el canal de YouTube de REDLEV",
   "cta_label": "Ver en YouTube",
   "cta_url": "https://www.youtube.com/watch?v=29iBNL49wAY",
-  "image": "assets/img/events/seminario-papa.jpg",
+  "image": "assets/img/events/seminario-papa-web.jpg",
   "image_alt": "Cultivo joven de papa dispuesto en surcos"
 }
 ```
 
-La fotografía genérica de papa usada actualmente es `assets/img/events/seminario-papa.jpg`. Proviene del archivo `Potato field germany.JPG` de Wikimedia Commons, publicado en dominio público. Puedes reemplazarla manteniendo el mismo nombre o subir otra imagen y cambiar la ruta en `data/content.json`.
+La fotografía genérica de papa usa una versión optimizada llamada `assets/img/events/seminario-papa-web.jpg`. Puedes reemplazarla o subir otra imagen y cambiar la ruta en `data/content.json`.
+
+Para que un afiche se vea completo, agrega `"image_fit": "contain"` en esa actividad. Las fotografías pueden omitir el campo y usarán el recorte habitual. Ejemplo:
+
+```json
+"image": "assets/img/events/afiche-simposio.jpg",
+"image_alt": "Afiche del simposio",
+"image_fit": "contain"
+```
 
 ### Investigación destacada
 
@@ -462,8 +490,8 @@ Prueba:
 En `index.html`, las rutas tienen una versión al final:
 
 ```html
-<link rel="stylesheet" href="assets/css/styles.css?v=20260515-7" />
-<script src="assets/js/main.js?v=20260515-5" defer></script>
+<link rel="stylesheet" href="assets/css/styles.css?v=20260721-9" />
+<script src="assets/js/main.js?v=20260721-6" defer></script>
 ```
 
 Si modificas CSS o JavaScript, cambia el número después de `?v=`. Esto ayuda a que el navegador descargue la versión nueva.
