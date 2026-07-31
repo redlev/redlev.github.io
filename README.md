@@ -235,7 +235,7 @@ Ejemplo de actividad con imagen:
   "eyebrow": "Actividad destacada",
   "title": "6to Simposio Latinoamericano de Ecofisiología Vegetal",
   "location": "Manizales, Colombia",
-  "date_text": "26, 27 y 28 de octubre de 2026",
+  "date_text": "Fecha por confirmar",
   "description": "Encuentro latinoamericano de investigadoras e investigadores en ecofisiología vegetal.",
   "cta_label": "Ver página del simposio",
   "url": "simposio-2026.html",
