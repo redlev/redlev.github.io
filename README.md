@@ -292,16 +292,18 @@ Campos frecuentes:
 | `eyebrow` | Texto pequeño superior, por ejemplo `Este mes destacamos`. |
 | `title` | Título del artículo. |
 | `citation` | Cita bibliográfica. |
-| `abstract` | Resumen o descripción. |
+| `abstract` | Resumen breve que permanece visible. |
+| `attribution` | Mención visible de integrantes de REDLEV u otra nota editorial. |
+| `full_abstract` | Resumen ampliado que aparece al desplegar `Leer resumen completo`. |
 | `paper_label` | Texto del botón. |
 | `paper_url` | Enlace DOI, revista o repositorio. |
 | `image` | Imagen relacionada. |
 | `image_alt` | Descripción accesible de la imagen. |
 
-Si el resumen necesita varios párrafos, en JSON se usa `\n\n` para separar párrafos:
+Si el resumen ampliado necesita varios párrafos, en `full_abstract` se usa `\n\n` para separarlos:
 
 ```json
-"abstract": "Primer párrafo.\n\nSegundo párrafo."
+"full_abstract": "Primer párrafo.\n\nSegundo párrafo."
 ```
 
 ### Comité
@@ -491,7 +493,7 @@ En `index.html`, las rutas tienen una versión al final:
 
 ```html
 <link rel="stylesheet" href="assets/css/styles.css?v=20260721-9" />
-<script src="assets/js/main.js?v=20260721-6" defer></script>
+<script src="assets/js/main.js?v=20260804-2" defer></script>
 ```
 
 Si modificas CSS o JavaScript, cambia el número después de `?v=`. Esto ayuda a que el navegador descargue la versión nueva.
