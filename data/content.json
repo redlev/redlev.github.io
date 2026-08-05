@@ -53,16 +53,16 @@
         "published": true,
         "featured": false,
         "eyebrow": "Seminario mensual",
-        "title": "Causas fisiológicas del decaimiento en especies arbóreas de los bosques del sur de Chile",
+        "title": "Importancia de la conductancia del mesófilo sobre la fotosíntesis de plantas alto-andinas en Chile central",
         "location": "En línea por Zoom",
-        "date_text": "Viernes 31 de julio de 2026 · 10:00 h (hora de Panamá)",
-        "description": "Seminario de julio de la Red Latinoamericana de Ecofisiología Vegetal, a cargo de la Dra. Frida Piper, del Instituto de Ciencias Biológicas de la Universidad de Talca, Chile.",
+        "date_text": "Viernes 28 de agosto de 2026 · 10:00 h (Panamá, UTC−5)",
+        "description": "Seminario de agosto de la Red Latinoamericana de Ecofisiología Vegetal, a cargo del Dr. Rodrigo Viveros, de la Universidad de La Serena, Chile. Participación abierta a la comunidad.",
         "cta_label": "Inscribirse en Zoom",
-        "url": "https://reuna.zoom.us/meeting/register/eoaoQ2SxRhW8YikllOwGfw",
-        "image": "assets/img/events/frida-piper-terreno-vertical-web.jpg",
-        "image_alt": "Equipamiento ecofisiológico instalado en un bosque del sur de Chile",
-        "portrait_image": "assets/img/events/frida-piper-retrato.png",
-        "portrait_image_alt": "Frida Piper, investigadora de la Universidad de Talca"
+        "url": "https://reuna.zoom.us/meeting/register/j2Gyb7NIQBaS-AeyBApKFg",
+        "image": "assets/img/events/rodrigo-viveros-farellones-contexto.jpg",
+        "image_alt": "Paisaje altoandino en Farellones, Chile central",
+        "portrait_image": "assets/img/events/rodrigo-viveros-retrato.jpg",
+        "portrait_image_alt": "Rodrigo Viveros, investigador de la Universidad de La Serena"
       }
     ],
     "recent": [
@@ -80,25 +80,25 @@
       {
         "published": true,
         "title": "Último seminario REDLEV",
-        "subtitle": "Aspectos fisiológicos de la reflectancia del dosel en papa bajo diferentes niveles de estrés hídrico",
-        "speaker": "Grabación disponible en el canal de YouTube de REDLEV",
+        "subtitle": "Causas fisiológicas del decaimiento en especies arbóreas de los bosques del sur de Chile",
+        "speaker": "Dra. Frida Piper · Universidad de Talca, Chile",
         "cta_label": "Ver en YouTube",
-        "cta_url": "https://www.youtube.com/watch?v=29iBNL49wAY",
-        "image": "assets/img/events/seminario-papa-web.jpg",
-        "image_alt": "Cultivo joven de papa dispuesto en surcos"
+        "cta_url": "https://youtu.be/OFF53QqOUaI",
+        "image": "assets/img/events/frida-piper-terreno-vertical-web.jpg",
+        "image_alt": "Equipamiento ecofisiológico instalado en un bosque del sur de Chile"
       }
     ]
   },
   "featured_research": {
     "_instructions": "Cambia este bloque para actualizar el artículo destacado del mes. Para incluir imagen, súbela a assets/img/research/ y actualiza image e image_alt.",
     "eyebrow": "Este mes destacamos",
-    "title": "Conservative water-use strategy in walnut (Juglans regia) cv. 'Chandler' grafted onto rootstocks differing in root hydraulic conductance and vigor",
-    "citation": "Pardo, A., Infante, R., Otárola, J. et al. Conservative water-use strategy in walnut (Juglans regia) cv. 'Chandler' grafted onto rootstocks differing in root hydraulic conductance and vigor. Plant Soil (2026). https://doi.org/10.1007/s11104-026-08293-1",
-    "abstract": "Los portainjertos se emplean ampliamente en nogal para modular el vigor y la tolerancia al estrés; sin embargo, persiste la incertidumbre sobre hasta qué punto los rasgos del portainjerto se traducen en el desempeño del vástago bajo sequía. En este estudio se evaluó si portainjertos clonales contrastantes RX1 y VX211, y un portainjerto de semilla de Juglans regia, modifican la capacidad hidráulica radicular y, en consecuencia, el estado hídrico y el intercambio gaseoso del cultivar Chandler cultivado en maceta bajo un déficit hídrico progresivo.\n\nChandler se injertó sobre plántulas de J. regia (CH/JU) o sobre los clonales RX1 y VX211 (CH/RX1, CH/VX211). Asimismo, se incluyeron plantas no injertadas de RX1 y VX211 para caracterizar rasgos dependientes del genotipo en ausencia de la unión de injerto. Las plantas se mantuvieron bajo condiciones bien regadas o sometidas a déficit hídrico progresivo. Se midieron el diámetro de tronco, la masa seca de raíces, la conductancia y conductividad hidráulica radicular (Kr25, Lr25), potenciales hídricos foliares, intercambio gaseoso, punto de pérdida de turgor (TLP), área de hidroscape (HA) y la transpiración de planta completa.\n\nEl déficit hídrico redujo el intercambio gaseoso, sin afectar la masa radicular ni el diámetro de tronco. La biomasa y los rasgos hidráulicos de la raíz variaron entre combinaciones vástago-portainjerto, con CH/JU y VX211 mostrando mayores Kr25 y/o Lr25 que RX1. Entre combinaciones injertadas, el TLP fue similar y los valores de HA fueron bajos, siendo CH/JU el de menor HA relativa.",
+    "title": "Polyamines in Citrus Stress Resilience and Fruit Quality: Metabolism, Exogenous Applications, and Translational Perspectives",
+    "citation": "Aucique-Pérez, C. E., Jasso-Robles, F. I., Felix, J. S. A., El Sharkawy, I., De Diego, N. y Shahid, M. A. (2026). Polyamines in Citrus Stress Resilience and Fruit Quality: Metabolism, Exogenous Applications, and Translational Perspectives. Plant Stress, 101498. https://doi.org/10.1016/j.stress.2026.101498",
+    "abstract": "El artículo examina el metabolismo de las poliaminas y su papel en la capacidad de los cítricos para enfrentar condiciones de estrés y sostener la calidad de los frutos. También aborda las aplicaciones exógenas de estos compuestos y las perspectivas para trasladar el conocimiento fisiológico a prácticas de manejo y estrategias de mejoramiento del cultivo.\n\nEntre sus autores se encuentra Carlos Eduardo Aucique-Pérez, integrante de REDLEV. La publicación apareció en la revista Plant Stress el 28 de julio de 2026.",
     "paper_label": "Ver publicación",
-    "paper_url": "https://doi.org/10.1007/s11104-026-08293-1",
-    "image": "assets/img/research/articulo-destacado-nogales-web.jpg",
-    "image_alt": "Nogales usados para investigación ecofisiológica"
+    "paper_url": "https://www.sciencedirect.com/science/article/pii/S2667064X26002800",
+    "image": "assets/img/research/poliaminas-citricos-carlos-aucique.png",
+    "image_alt": "Carlos Aucique-Pérez realizando mediciones fisiológicas en plantas de invernadero"
   },
   "committee": [
     {
