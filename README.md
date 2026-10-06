@@ -339,6 +339,19 @@ Si una persona no tiene fotografía, deja:
 "image_alt": ""
 ```
 
+## Nombres científicos en cursiva
+
+Los textos de `data/content.json` que aparecen en la página admiten cursiva: basta escribir el texto entre asteriscos. Úsalo siempre para nombres científicos en títulos, subtítulos, descripciones e investigación destacada.
+
+```json
+"title": "Balance fuente–sumidero en vid (*Vitis vinifera*) y olivo (*Olea europaea*)"
+```
+
+1. Cada nombre va entre un par de asteriscos: `*Vitis vinifera*`. Un asterisco sin cerrar deja en cursiva el resto del texto.
+2. No uses asteriscos en `image_alt`, `portrait_image_alt`, `url` ni rutas de imágenes: esos campos no se muestran con formato.
+3. El generador de afiches usa la misma convención en `title` y `youtube_title`, así que el título se copia igual en ambos archivos.
+4. Para el seminario mensual, el título de `activities.upcoming` y el `subtitle` de `activities.recent` deben llevar las cursivas cuando corresponda.
+
 ## Reglas básicas de JSON
 
 `data/content.json` es un archivo JSON. Es fácil de editar, pero tiene reglas estrictas:

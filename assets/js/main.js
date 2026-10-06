@@ -6,11 +6,12 @@
   2. Edita activities.upcoming[1] para el seminario mensual.
   3. Edita featured_research para el artículo destacado.
   4. Si agregas imágenes, súbelas a una subcarpeta de assets/img/ y usa esa ruta en el JSON.
+  5. Para cursiva (nombres científicos), escribe el texto entre asteriscos: "vid (*Vitis vinifera*)".
 */
 
 (function () {
   const contentUrl = new URL("data/content.json", window.location.href);
-  contentUrl.searchParams.set("v", "20260804-2");
+  contentUrl.searchParams.set("v", "20261006-1");
   const $ = (id) => document.getElementById(id);
   const socialIcons = {
     youtube: '<svg viewBox="0 0 24 24" role="img" focusable="false"><path d="M21.6 7.2a3 3 0 0 0-2.1-2.1C17.6 4.6 12 4.6 12 4.6s-5.6 0-7.5.5a3 3 0 0 0-2.1 2.1A31.3 31.3 0 0 0 2 12a31.3 31.3 0 0 0 .4 4.8 3 3 0 0 0 2.1 2.1c1.9.5 7.5.5 7.5.5s5.6 0 7.5-.5a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 22 12a31.3 31.3 0 0 0-.4-4.8ZM10 15.5v-7l6 3.5-6 3.5Z"/></svg>',
@@ -22,7 +23,7 @@
   const actions = {
     text(id, value) {
       const el = $(id);
-      if (el) el.textContent = value ?? "";
+      if (el) setRichText(el, value);
     },
     link(id, url, label) {
       const el = $(id);
@@ -188,7 +189,7 @@
         const img = document.createElement("img");
         img.className = "activity-media-context";
         img.src = item.image;
-        img.alt = item.image_alt || item.title || "Imagen de actividad REDLEV";
+        img.alt = item.image_alt || plainText(item.title) || "Imagen de actividad REDLEV";
         img.width = 640;
         img.height = 400;
         img.loading = "lazy";
@@ -258,7 +259,7 @@
         media.className = "recent-media";
         const img = document.createElement("img");
         img.src = item.image;
-        img.alt = item.image_alt || item.title || "Imagen de actividad reciente REDLEV";
+        img.alt = item.image_alt || plainText(item.title) || "Imagen de actividad reciente REDLEV";
         img.width = 480;
         img.height = 270;
         img.loading = "lazy";
@@ -362,9 +363,30 @@
   function textElement(tag, text, className) {
     const el = document.createElement(tag);
     el.className = className;
-    el.textContent = text;
+    setRichText(el, text);
     if (!text) el.hidden = true;
     return el;
+  }
+
+  // Texto entre asteriscos se muestra en cursiva: "vid (*Vitis vinifera*)".
+  // Se construye con nodos de texto, nunca con innerHTML.
+  function setRichText(el, value) {
+    const parts = String(value ?? "").split("*");
+    el.textContent = "";
+    parts.forEach((part, index) => {
+      if (!part) return;
+      if (index % 2 === 1) {
+        const em = document.createElement("em");
+        em.textContent = part;
+        el.appendChild(em);
+      } else {
+        el.appendChild(document.createTextNode(part));
+      }
+    });
+  }
+
+  function plainText(value) {
+    return String(value ?? "").replace(/\*/g, "");
   }
 
   function startPanamaClock() {

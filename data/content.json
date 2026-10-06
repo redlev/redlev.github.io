@@ -34,35 +34,35 @@
     "button_label": "Formulario de registro"
   },
   "activities": {
-    "_instructions": "Publica aquí hasta dos próximas actividades. Usa \"published\": true para mostrar una actividad y false para mantenerla como borrador. La primera puede llevar \"featured\": true. Si necesita página propia, usa \"url\": \"simposio-2026.html\" o la ruta correspondiente.",
+    "_instructions": "Publica aquí hasta dos próximas actividades. Usa \"published\": true para mostrar una actividad y false para mantenerla como borrador. La primera puede llevar \"featured\": true. Si necesita página propia, usa \"url\": \"simposio-2026.html\" o la ruta correspondiente. Para cursiva (nombres científicos), escribe el texto entre asteriscos: \"vid (*Vitis vinifera*)\".",
     "upcoming": [
       {
         "published": true,
         "featured": true,
         "eyebrow": "Actividad destacada",
         "title": "6to Simposio Latinoamericano de Ecofisiología Vegetal",
-        "location": "Manizales, Colombia",
-        "date_text": "Fecha por confirmar",
-        "description": "Encuentro latinoamericano de investigadoras e investigadores en ecofisiología vegetal. La nueva fecha será confirmada próximamente. El simposio se realizará en Manizales, Colombia.",
+        "location": "En línea por Zoom",
+        "date_text": "Jueves 19 de noviembre de 2026",
+        "description": "Encuentro latinoamericano de investigadoras e investigadores en ecofisiología vegetal, en formato virtual por Zoom. El programa y la inscripción se publicarán próximamente.",
         "cta_label": "Ver página del simposio",
         "url": "simposio-2026.html",
-        "image": "assets/img/events/manizales_main.jpg",
-        "image_alt": "Vista de Manizales, Colombia"
+        "image": "assets/img/site/redlev-ecophysiology-field-instrument.jpg",
+        "image_alt": "Medición de intercambio gaseoso en hojas de un frutal en terreno"
       },
       {
         "published": true,
         "featured": false,
         "eyebrow": "Seminario mensual",
-        "title": "Importancia de la conductancia del mesófilo sobre la fotosíntesis de plantas alto-andinas en Chile central",
+        "title": "Sensibilidad diferencial al balance fuente–sumidero en vid (*Vitis vinifera*) y olivo (*Olea europaea*): efectos de la carga frutal y del anillado",
         "location": "En línea por Zoom",
-        "date_text": "Viernes 28 de agosto de 2026 · 10:00 h (Panamá, UTC−5)",
-        "description": "Seminario de agosto de la Red Latinoamericana de Ecofisiología Vegetal, a cargo del Dr. Rodrigo Viveros, de la Universidad de La Serena, Chile. Participación abierta a la comunidad.",
+        "date_text": "Jueves 8 de octubre de 2026 · 10:00 h (Panamá, UTC−5)",
+        "description": "Seminario mensual de la Red Latinoamericana de Ecofisiología Vegetal, a cargo del Dr. Marco Garrido Salinas, de la Universidad de La Serena, Chile. La charla compara la respuesta de la vid y el olivo al balance fuente–sumidero. Participación abierta a la comunidad.",
         "cta_label": "Inscribirse en Zoom",
-        "url": "https://reuna.zoom.us/meeting/register/j2Gyb7NIQBaS-AeyBApKFg",
-        "image": "assets/img/events/rodrigo-viveros-farellones-contexto.jpg",
-        "image_alt": "Paisaje altoandino en Farellones, Chile central",
-        "portrait_image": "assets/img/events/rodrigo-viveros-retrato.jpg",
-        "portrait_image_alt": "Rodrigo Viveros, investigador de la Universidad de La Serena"
+        "url": "https://reuna.zoom.us/meeting/register/3Jy6USpGQyavwCfCNKEW7g",
+        "image": "assets/img/events/marco-garrido-vid-olivo-contexto.jpg",
+        "image_alt": "Racimos de uva Chardonnay junto a una rama de olivo con frutos",
+        "portrait_image": "assets/img/events/marco-garrido-salinas-retrato.jpg",
+        "portrait_image_alt": "Marco Garrido Salinas, investigador de la Universidad de La Serena"
       }
     ],
     "recent": [
@@ -80,12 +80,12 @@
       {
         "published": true,
         "title": "Último seminario REDLEV",
-        "subtitle": "Causas fisiológicas del decaimiento en especies arbóreas de los bosques del sur de Chile",
-        "speaker": "Dra. Frida Piper · Universidad de Talca, Chile",
+        "subtitle": "Importancia de la conductancia del mesófilo sobre la fotosíntesis de plantas alto-andinas en Chile central",
+        "speaker": "Dr. Rodrigo Viveros · Universidad de La Serena, Chile",
         "cta_label": "Ver en YouTube",
-        "cta_url": "https://youtu.be/OFF53QqOUaI",
-        "image": "assets/img/events/frida-piper-terreno-vertical-web.jpg",
-        "image_alt": "Equipamiento ecofisiológico instalado en un bosque del sur de Chile"
+        "cta_url": "https://youtu.be/v6otnXMkZlw",
+        "image": "assets/img/events/rodrigo-viveros-farellones-contexto.jpg",
+        "image_alt": "Paisaje altoandino en Farellones, Chile central"
       }
     ]
   },
