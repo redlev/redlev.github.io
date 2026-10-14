@@ -1475,3 +1475,11 @@ code {
     display: grid;
   }
 }
+
+.event-fact-note {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+}
