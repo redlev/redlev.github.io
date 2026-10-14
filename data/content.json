@@ -43,26 +43,26 @@
         "title": "6to Simposio Latinoamericano de Ecofisiología Vegetal",
         "location": "En línea por Zoom",
         "date_text": "Jueves 19 de noviembre de 2026",
-        "description": "Encuentro latinoamericano de investigadoras e investigadores en ecofisiología vegetal, en formato virtual por Zoom. El programa y la inscripción se publicarán próximamente.",
-        "cta_label": "Ver página del simposio",
+        "description": "Encuentro latinoamericano de ecofisiología vegetal, en línea por Zoom, de 08:45 a 16:15 h (Panamá, UTC−5). Convocatoria a resúmenes abierta hasta el viernes 30 de octubre de 2026.",
+        "cta_label": "Programa y envío de resúmenes",
         "url": "simposio-2026.html",
-        "image": "assets/img/site/redlev-ecophysiology-field-instrument.jpg",
-        "image_alt": "Medición de intercambio gaseoso en hojas de un frutal en terreno"
+        "image": "assets/img/events/simposio-2026-huerto-cactaceas.jpg",
+        "image_alt": "Huerto frutal en una ladera, rodeado de matorral y cactáceas columnares"
       },
       {
-        "published": true,
+        "published": false,
         "featured": false,
         "eyebrow": "Seminario mensual",
-        "title": "Sensibilidad diferencial al balance fuente–sumidero en vid (*Vitis vinifera*) y olivo (*Olea europaea*): efectos de la carga frutal y del anillado",
+        "title": "",
         "location": "En línea por Zoom",
-        "date_text": "Jueves 8 de octubre de 2026 · 10:00 h (Panamá, UTC−5)",
-        "description": "Seminario mensual de la Red Latinoamericana de Ecofisiología Vegetal, a cargo del Dr. Marco Garrido Salinas, de la Universidad de La Serena, Chile. La charla compara la respuesta de la vid y el olivo al balance fuente–sumidero. Participación abierta a la comunidad.",
+        "date_text": "",
+        "description": "",
         "cta_label": "Inscribirse en Zoom",
-        "url": "https://reuna.zoom.us/meeting/register/3Jy6USpGQyavwCfCNKEW7g",
-        "image": "assets/img/events/marco-garrido-vid-olivo-contexto.jpg",
-        "image_alt": "Racimos de uva Chardonnay junto a una rama de olivo con frutos",
-        "portrait_image": "assets/img/events/marco-garrido-salinas-retrato.jpg",
-        "portrait_image_alt": "Marco Garrido Salinas, investigador de la Universidad de La Serena"
+        "url": "",
+        "image": "",
+        "image_alt": "",
+        "portrait_image": "",
+        "portrait_image_alt": ""
       }
     ],
     "recent": [
@@ -80,12 +80,12 @@
       {
         "published": true,
         "title": "Último seminario REDLEV",
-        "subtitle": "Importancia de la conductancia del mesófilo sobre la fotosíntesis de plantas alto-andinas en Chile central",
-        "speaker": "Dr. Rodrigo Viveros · Universidad de La Serena, Chile",
+        "subtitle": "Sensibilidad diferencial al balance fuente–sumidero en vid (*Vitis vinifera*) y olivo (*Olea europaea*): efectos de la carga frutal y del anillado",
+        "speaker": "Dr. Marco Garrido Salinas · Universidad de La Serena, Chile",
         "cta_label": "Ver en YouTube",
-        "cta_url": "https://youtu.be/v6otnXMkZlw",
-        "image": "assets/img/events/rodrigo-viveros-farellones-contexto.jpg",
-        "image_alt": "Paisaje altoandino en Farellones, Chile central"
+        "cta_url": "https://youtu.be/K4oAF6Vcoxg",
+        "image": "assets/img/events/marco-garrido-salinas-retrato.jpg",
+        "image_alt": "Marco Garrido Salinas, investigador de la Universidad de La Serena"
       }
     ]
   },

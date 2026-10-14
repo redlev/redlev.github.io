@@ -11,7 +11,7 @@
 
 (function () {
   const contentUrl = new URL("data/content.json", window.location.href);
-  contentUrl.searchParams.set("v", "20261006-1");
+  contentUrl.searchParams.set("v", "20261014-1");
   const $ = (id) => document.getElementById(id);
   const socialIcons = {
     youtube: '<svg viewBox="0 0 24 24" role="img" focusable="false"><path d="M21.6 7.2a3 3 0 0 0-2.1-2.1C17.6 4.6 12 4.6 12 4.6s-5.6 0-7.5.5a3 3 0 0 0-2.1 2.1A31.3 31.3 0 0 0 2 12a31.3 31.3 0 0 0 .4 4.8 3 3 0 0 0 2.1 2.1c1.9.5 7.5.5 7.5.5s5.6 0 7.5-.5a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 22 12a31.3 31.3 0 0 0-.4-4.8ZM10 15.5v-7l6 3.5-6 3.5Z"/></svg>',

@@ -1224,3 +1224,254 @@ code {
     transition: none;
   }
 }
+
+/* Página del simposio: convocatoria y programa (2026-10-14) */
+.event-hero img {
+  height: auto;
+}
+
+.event-facts-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.event-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.75fr);
+  gap: 30px;
+  align-items: start;
+}
+
+.event-subtitle {
+  margin: 22px 0 8px;
+}
+
+.event-list {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding-left: 22px;
+  color: var(--text);
+}
+
+.event-list li::marker {
+  color: var(--green);
+  font-weight: 850;
+}
+
+.event-figure {
+  margin: 0;
+}
+
+.event-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  object-fit: cover;
+}
+
+.event-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 26px;
+}
+
+.event-panel {
+  min-width: 0;
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--green);
+  border-radius: var(--radius);
+  background: #fff;
+  padding: 20px;
+}
+
+.event-panel .h3 {
+  margin-bottom: 12px;
+}
+
+.event-panel .text {
+  margin-bottom: 12px;
+}
+
+.event-dates {
+  display: grid;
+  gap: 0;
+  margin: 0;
+}
+
+.event-dates div {
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr);
+  gap: 12px;
+  border-top: 1px solid var(--border);
+  padding: 9px 0;
+}
+
+.event-dates div:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.event-dates dt {
+  color: var(--navy);
+  font-weight: 900;
+}
+
+.event-dates dd {
+  margin: 0;
+  color: var(--text);
+}
+
+.program {
+  margin: 18px 0 0;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  list-style: none;
+  overflow: hidden;
+}
+
+.program-row {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 16px;
+  align-items: baseline;
+  border-top: 1px solid var(--border);
+  padding: 12px 18px;
+}
+
+.program-row:first-child {
+  border-top: 0;
+}
+
+.program-time {
+  color: var(--navy);
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+}
+
+.program-time small {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.program-activity {
+  min-width: 0;
+  color: var(--text);
+}
+
+.program-activity strong {
+  color: var(--navy);
+}
+
+.program-session {
+  border-top: 1px solid var(--border);
+  background: var(--navy);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  padding: 9px 18px;
+  text-transform: uppercase;
+}
+
+.program-session span {
+  border-left: 4px solid var(--sun);
+  padding-left: 9px;
+}
+
+.program-row-keynote {
+  background: var(--green-soft);
+}
+
+.program-row-qa {
+  background: var(--sun-soft);
+}
+
+.program-row-qa .program-activity {
+  color: var(--navy);
+  font-weight: 750;
+}
+
+.program-row-minor {
+  background: var(--surface-blue);
+}
+
+.program-row-minor .program-activity {
+  color: var(--muted);
+  font-weight: 750;
+}
+
+.event-panel-tz {
+  margin-top: 18px;
+}
+
+.tz-list {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--text);
+}
+
+.tz-list strong {
+  display: inline-block;
+  min-width: 108px;
+  color: var(--navy);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 980px) {
+  .event-facts-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .event-split,
+  .event-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .event-figure {
+    max-width: 560px;
+  }
+}
+
+@media (max-width: 600px) {
+  .event-facts-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .event-panel {
+    padding: 16px;
+  }
+
+  .event-dates div {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .program-row {
+    grid-template-columns: 1fr;
+    gap: 2px;
+    padding: 11px 14px;
+  }
+
+  .program-time small {
+    display: inline;
+    margin-left: 8px;
+  }
+
+  .program-session {
+    padding: 9px 14px;
+  }
+
+  .tz-list li {
+    display: grid;
+  }
+}
