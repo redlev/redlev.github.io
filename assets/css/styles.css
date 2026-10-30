@@ -1483,3 +1483,88 @@ code {
   font-size: 13px;
   font-weight: 700;
 }
+
+/* Conferencias magistrales del simposio (2026-10-30) */
+.speaker-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.speaker-card {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--sun);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.speaker-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  object-fit: cover;
+  object-position: center 30%;
+  background: var(--navy-soft);
+}
+
+.speaker-photo-pending {
+  display: grid;
+  place-items: center;
+  padding: 12px;
+  background: var(--navy);
+  color: #dce8ed;
+  font-size: 12px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.speaker-body {
+  min-width: 0;
+  padding: 18px;
+}
+
+.speaker-body .meta {
+  margin: 4px 0 10px;
+}
+
+.speaker-talk {
+  margin: 0;
+  color: var(--text);
+  font-size: 17px;
+  font-weight: 750;
+  line-height: 1.4;
+}
+
+.speaker-talk-pending {
+  color: var(--muted);
+  font-weight: 650;
+}
+
+@media (max-width: 980px) {
+  .speaker-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .speaker-card {
+    grid-template-columns: 112px minmax(0, 1fr);
+  }
+
+  .speaker-photo {
+    min-height: 168px;
+  }
+
+  .speaker-body {
+    padding: 14px;
+  }
+
+  .speaker-talk {
+    font-size: 16px;
+  }
+}
